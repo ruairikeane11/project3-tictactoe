@@ -73,7 +73,13 @@ def checkDraw(board):
         print("It's a draw, start again!")
         gameRunning = False
 
-    
+def changePlayer():
+    global player1   
+    if player1 == "X":
+        player1 = "O"
+    else :
+        player1 = "X"
+
 
 
 
