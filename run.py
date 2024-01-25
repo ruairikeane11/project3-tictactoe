@@ -22,15 +22,34 @@ def playerInput(board):
         print('Sorry, this place has been taken!')
 
 def checkAcross(board):
+    """
+    Checks for horizonral rows of X and makes a winner
+    """
     global winner 
     if board[0] == board[1] == board[2] and board[1] != "-"
     winner = board[0]
     return True
     elif board[3] == board[4] == board[5] and board[4] != "-"
-    winner = board[4]
+    winner = board[3]
     return True
     elif board[6] == board[7] == board[8] and board[7] != "-"
-    winner = board[]
+    winner = board[6]
+    return True
+
+def checkDown(board):
+    """
+    Checks for downward rows of X and makes a winner
+    """
+    global winner 
+    if board[0] == board[3] == board[6] and board[0] != "-"
+    winner = board[0]
+    return True
+    elif board[1] == board[4] == board[7] and board[1] != "-"
+    winner = board[1]
+    return True
+    elif board[2] == board[5] == board[9] and board[2] != "-"
+    winner = board[2]
+    return True
 
 
 
