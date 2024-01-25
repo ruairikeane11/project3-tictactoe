@@ -67,8 +67,12 @@ def checkDraw(board):
     """
     Checks to see if the board is full while there is no winner, and then restarts the game
     """
+    global gameRunning
     if "-" not in board:
-        
+        print(boardGame)
+        print("It's a draw, start again!")
+        gameRunning = False
+
     
 
 
