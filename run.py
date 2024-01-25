@@ -73,6 +73,11 @@ def checkDraw(board):
         print("It's a draw, start again!")
         gameRunning = False
 
+def checkWinner():
+    if checkAcross(board) or checkDown(board) or checkDiag(board):
+        print(f'The winner is {winner}')
+        gameRunning = False
+
 def changePlayer():
     global player1   
     if player1 == "X":
@@ -88,4 +93,6 @@ def changePlayer():
 while gameRunning:
     boardGame(board)
     playerInput(board)
-    
+    checkWinner()
+    checkDraw()
+    changePlayer()
