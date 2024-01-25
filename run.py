@@ -1,6 +1,15 @@
-board = ["_" , "_" , "_"
-         "_" , "_" , "_"
-         "_" , "_" , "_"]
+board = ["-", "-", "-",
+         "-", "-", "-",
+         "-", "-", "-"]
 player1 = "X"
 winner = None
 gameRunning = True
+
+def boardGame(board):
+    print(board[0] + "|" + board[1] + "|" + board[2])
+    print('------------')
+    print(board[0] + "|" + board[1] + "|" + board[2])
+    print('------------')
+    print(board[0] + "|" + board[1] + "|" + board[2])
+
+boardGame(board)
