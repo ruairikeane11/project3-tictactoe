@@ -47,9 +47,30 @@ def checkDown(board):
     elif board[1] == board[4] == board[7] and board[1] != "-"
     winner = board[1]
     return True
-    elif board[2] == board[5] == board[9] and board[2] != "-"
+    elif board[2] == board[5] == board[8] and board[2] != "-"
     winner = board[2]
     return True
+
+def checkDiag(board):
+    """
+    Checks for diagonal rows of X and makes a winner
+    """
+    global winner 
+    if board[0] == board[4] == board[8] and board[0] != "-"
+    winner = board[0]
+    return True
+    elif board[6] == board[4] == board[2] and board[6] != "-"
+    winner = board[1]
+    return True
+
+def checkDraw(board):
+    """
+    Checks to see if the board is full while there is no winner, and then restarts the game
+    """
+    if "-" not in board:
+        
+    
+
 
 
 
