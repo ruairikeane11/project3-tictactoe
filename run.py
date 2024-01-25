@@ -15,6 +15,10 @@ def boardGame(board):
 boardGame(board)
 
 def playerInput(board):
-    input = int(input("Enter a number between 1-9:"))
-    
+    inp = int(input("Enter a number between 1-9:"))
+    if inp >= 1 and inp <= 9 and board[inp-1] == "-":
+        board[inp-1] = currentPlayer
+    else:
+        
+
 
