@@ -62,7 +62,7 @@ def checkDiag(board):
         winner = board[0]
         return True
     elif board[6] == board[4] == board[2] and board[6] != "-":
-        winner = board[1]
+        winner = board[6]
         return True
 
 def checkDraw(board):
@@ -78,7 +78,21 @@ def checkDraw(board):
 def checkWinner():
     if checkAcross(board) or checkDown(board) or checkDiag(board):
         print(f'The winner is {winner}')
-        gameRunning = False
+        restartGame()
+
+def restartGame():
+    """
+    restarts the game when there is a winner
+    """
+    global board, player1, winner, gameRunning
+
+    board = ["-", "-", "-",
+         "-", "-", "-",
+         "-", "-", "-"]
+    player1 = "X"
+    winner = None
+    gameRunning = True
+    print("Restarting game .....\n")
 
 def changePlayer():
     global player1   
@@ -91,7 +105,7 @@ def computer(board):
     """
     Generates random integer between 0-8 when its O
     """
-    while player1 == '0':
+    while player1 == 'O':
         position = random.randint(0,8)
         if board[position] == "-":
             board[position] = "O"
