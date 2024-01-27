@@ -1,8 +1,8 @@
 import random
 
-board = ["-", "-", "-",
-         "-", "-", "-",
-         "-", "-", "-"]
+board = ["--", "--", "--",
+         "--", "--", "--",
+         "--", "--", "--"]
 player1 = "X"
 winner = None
 gameRunning = True
@@ -14,7 +14,6 @@ def boardGame(board):
     print('------')
     print(board[6] +     "|"     + board[7] +     "|"     + board[8])
 
-boardGame(board)
 
 def playerInput(board):
     inp = int(input("Enter a number between 1-9: "))
