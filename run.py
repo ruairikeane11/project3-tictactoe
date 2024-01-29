@@ -36,6 +36,7 @@ def playerInput(board):
         print(Style.RESET_ALL)  # Resets color to default
         playerInput(board)
 
+
 def checkAcross(board):
     """
     Checks for horizonral rows of X and makes a winner
@@ -86,16 +87,22 @@ def checkDraw(board):
     global gameRunning
     if " " not in board:
         print(boardGame)
-        print("It's a draw, start again!")
+        print(Fore.RED + "It's a draw, start again!")
+        print(Style.RESET_ALL)
         restartGame()
         gameRunning = False
 
 def checkWinner():
     global roundCounter
-    if checkAcross(board) or checkDown(board) or checkDiag(board):
-        print(f'The winner is {winner}')
+    try: 
+        if checkAcross(board) or checkDown(board) or checkDiag(board):
+        print(Fore.RED + f'The winner is {winner}')
+        print(Style.RESET_ALL)
         roundCounter += 1
         restartGame()
+    except Exception as e:
+        print(f"Error: {e}")
+        print()
 
 def restartGame():
     """
