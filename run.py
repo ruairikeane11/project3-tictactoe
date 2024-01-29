@@ -1,4 +1,6 @@
 import random
+from colorama import init, Fore, Back, Style
+
 
 board = [" ", " ", " ",
          " ", " ", " ",
@@ -8,8 +10,11 @@ winner = None
 gameRunning = True
 roundCounter = 0
 
+init(autoreset = True) # Autoresets colors
+
 
 def boardGame(board):
+    print("The first player to get 3 in a row is the winner.")
     print(board[0] +     "|"     + board[1] +     "|"     + board[2])
     print('-----')
     print(board[3] +     "|"     + board[4] +     "|"     + board[5])
@@ -18,11 +23,18 @@ def boardGame(board):
 
 
 def playerInput(board):
-    inp = int(input("Enter a number between 1-9: "))
-    if inp >= 1 and inp <= 9 and board[inp-1] == " ":
-        board[inp-1] = player1
-    else:
-        print('Sorry, this place has been taken!')
+    try:
+        inp = int(input("Enter a number between 1-9: "))
+        if inp >= 1 and inp <= 9 and board[inp-1] == " ":
+            board[inp-1] = player1
+        else:
+            print(Fore.RED + 'Sorry, this place has been taken!')
+            print(Style.RESET_ALL)  # Resets color to default
+            playerInput(board)
+    except ValueError:
+        print(Fore.RED + 'Invalid input. Please enter a number between 1-9.')
+        print(Style.RESET_ALL)  # Resets color to default
+        playerInput(board)
 
 def checkAcross(board):
     """
@@ -104,7 +116,7 @@ def changePlayer():
     if player1 == "X":
         player1 = "O"
     else :
-        player1 = "X"
+        player1 ="X"
 
 def computer(board):
     """
@@ -131,8 +143,6 @@ while gameRunning:
     computer(board)
     checkWinner()
     checkDraw(board)
-    
-
 
     
     
