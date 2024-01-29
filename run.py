@@ -6,6 +6,8 @@ board = [" ", " ", " ",
 player1 = "X"
 winner = None
 gameRunning = True
+roundCounter = 0
+
 
 def boardGame(board):
     print(board[0] +     "|"     + board[1] +     "|"     + board[2])
@@ -63,6 +65,7 @@ def checkDiag(board):
     elif board[6] == board[4] == board[2] and board[6] != " ":
         winner = board[6]
         return True
+        
 
 def checkDraw(board):
     """
@@ -72,11 +75,14 @@ def checkDraw(board):
     if " " not in board:
         print(boardGame)
         print("It's a draw, start again!")
+        restartGame()
         gameRunning = False
 
 def checkWinner():
+    global roundCounter
     if checkAcross(board) or checkDown(board) or checkDiag(board):
         print(f'The winner is {winner}')
+        roundCounter += 1
         restartGame()
 
 def restartGame():
@@ -110,11 +116,13 @@ def computer(board):
             board[position] = "O"
             changePlayer()
 
-
-
+def roundCount():
+    global roundCounter
+    print(f"Rounds played: {roundCounter}")
 
 #Create while loop to run game
 while gameRunning:
+    roundCount()
     boardGame(board)
     playerInput(board)
     checkWinner()
@@ -123,3 +131,11 @@ while gameRunning:
     computer(board)
     checkWinner()
     checkDraw(board)
+    
+
+
+    
+    
+
+
+
