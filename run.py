@@ -9,6 +9,7 @@ player1 = "X"
 winner = None
 gameRunning = True
 roundCounter = 0
+score = {"X": 0, "O": 0}
 
 init(autoreset = True) # Autoresets colors
 
@@ -96,13 +97,16 @@ def checkWinner():
     global roundCounter
     try: 
         if checkAcross(board) or checkDown(board) or checkDiag(board):
-        print(Fore.RED + f'The winner is {winner}')
-        print(Style.RESET_ALL)
-        roundCounter += 1
-        restartGame()
+            print(f'The winner is {winner}')
+            print(Style.RESET_ALL)
+            roundCounter += 1
+            score[player1] += 1
+            print(f"Score - X: {score['X']} | O: {score['O']}")
+            restartGame()
     except Exception as e:
         print(f"Error: {e}")
-        print()
+        print(Fore.RED + 'An error occurred while checking the winner.')
+        print(Style.RESET_ALL)  # Resets color to default
 
 def restartGame():
     """
