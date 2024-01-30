@@ -1,6 +1,5 @@
 import random
-from colorama import init, Fore, Back, Style
-
+from colorama import init, Fore, Style
 
 board = [" ", " ", " ",
          " ", " ", " ",
@@ -11,23 +10,24 @@ gameRunning = True
 roundCounter = 0
 score = {"X": 0, "O": 0}
 
-init(autoreset = True) # Autoresets colors
+init(autoreset=True)  # Autoresets colors
 
 
 def boardGame(board):
-    print("The first player to get 3 in a row is the winner.")
-    print(board[0] +     "|"     + board[1] +     "|"     + board[2])
+    print(Fore.BLUE + f"YOU ARE {player1}")
+    print(Fore.BLUE + "THE FIRST PLAYER TO GET 3 IN A ROW WINS.")
+    print(board[0] + "|" + board[1] + "|" + board[2])
     print('-----')
-    print(board[3] +     "|"     + board[4] +     "|"     + board[5])
+    print(board[3] + "|" + board[4] + "|" + board[5])
     print('-----')
-    print(board[6] +     "|"     + board[7] +     "|"     + board[8])
+    print(board[6] + "|" + board[7] + "|" + board[8])
 
 
 def playerInput(board):
     try:
         inp = int(input("Enter a number between 1-9: "))
-        if inp >= 1 and inp <= 9 and board[inp-1] == " ":
-            board[inp-1] = player1
+        if inp >= 1 and inp <= 9 and board[inp - 1] == " ":
+            board[inp - 1] = player1
         else:
             print(Fore.RED + 'Sorry, this place has been taken!')
             print(Style.RESET_ALL)  # Resets color to default
@@ -39,10 +39,7 @@ def playerInput(board):
 
 
 def checkAcross(board):
-    """
-    Checks for horizonral rows of X and makes a winner
-    """
-    global winner 
+    global winner
     if board[0] == board[1] == board[2] and board[1] != " ":
         winner = board[0]
         return True
@@ -53,11 +50,9 @@ def checkAcross(board):
         winner = board[6]
         return True
 
+
 def checkDown(board):
-    """
-    Checks for downward rows of X and makes a winner
-    """
-    global winner 
+    global winner
     if board[0] == board[3] == board[6] and board[0] != " ":
         winner = board[0]
         return True
@@ -68,52 +63,38 @@ def checkDown(board):
         winner = board[2]
         return True
 
+
 def checkDiag(board):
-    """
-    Checks for diagonal rows of X and makes a winner
-    """
-    global winner 
+    global winner
     if board[0] == board[4] == board[8] and board[0] != " ":
         winner = board[0]
         return True
     elif board[6] == board[4] == board[2] and board[6] != " ":
         winner = board[6]
         return True
-        
+
 
 def checkDraw(board):
-    """
-    Checks to see if the board is full while there is no winner, and then restarts the game
-    """
     global gameRunning
     if " " not in board:
-        print(boardGame)
-        print(Fore.RED + "It's a draw, start again!")
+        print(boardGame(board))
+        print(Fore.RED + "IT'S A DRAW, START AGAIN!")
         print(Style.RESET_ALL)
         restartGame()
         gameRunning = False
 
+
 def checkWinner():
-    global roundCounter
-    try: 
-        if checkAcross(board) or checkDown(board) or checkDiag(board):
-            print(f'The winner is {winner}')
-            print(Style.RESET_ALL)
-            roundCounter += 1
-            score[player1] += 1
-            print(f"Score - X: {score['X']} | O: {score['O']}")
-            restartGame()
-    except Exception as e:
-        print(f"Error: {e}")
-        print(Fore.RED + 'An error occurred while checking the winner.')
-        print(Style.RESET_ALL)  # Resets color to default
-
+    global roundCounter, score
+    if checkAcross(board) or checkDown(board) or checkDiag(board):
+        print(Fore.RED + f'THE WINNER IS {winner}')
+        roundCounter += 1
+        score[player1] += 1
+        print(f"SCORE - X: {score['X']} | O: {score['O']}")
+        restartGame()
+    
 def restartGame():
-    """
-    restarts the game when there is a winner
-    """
     global board, player1, winner, gameRunning
-
     board = [" ", " ", " ",
              " ", " ", " ",
              " ", " ", " "]
@@ -122,28 +103,29 @@ def restartGame():
     gameRunning = True
     print("Restarting game .....\n")
 
+
 def changePlayer():
-    global player1   
+    global player1
     if player1 == "X":
         player1 = "O"
-    else :
-        player1 ="X"
+    else:
+        player1 = "X"
+
 
 def computer(board):
-    """
-    Generates random integer between 0-8 when its O
-    """
     while player1 == 'O':
-        position = random.randint(0,8)
+        position = random.randint(0, 8)
         if board[position] == " ":
             board[position] = "O"
             changePlayer()
 
+
 def roundCount():
     global roundCounter
-    print(f"Rounds played: {roundCounter}")
+    print(Fore.BLUE + f"ROUNDS PLAYED: {roundCounter}")
 
-#Create while loop to run game
+
+# Create while loop to run the game
 while gameRunning:
     roundCount()
     boardGame(board)
