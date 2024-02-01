@@ -14,8 +14,8 @@ init(autoreset=True)  # Autoresets colors
 
 
 def boardGame(board):
-    print(Fore.BLUE + f"YOU ARE {player1}")
-    print(Fore.BLUE + "THE FIRST PLAYER TO GET 3 IN A ROW WINS.")
+    print(Fore.RED + f"YOU ARE {player1}")
+    print(Fore.RED + "THE FIRST PLAYER TO GET 3 IN A ROW WINS!")
     print(board[0] + "|" + board[1] + "|" + board[2])
     print('-----')
     print(board[3] + "|" + board[4] + "|" + board[5])
@@ -25,7 +25,7 @@ def boardGame(board):
 
 def playerInput(board):
     try:
-        inp = int(input("Enter a number between 1-9: "))
+        inp = int(input(Fore.GREEN + "Enter a number between 1-9: "))
         if inp >= 1 and inp <= 9 and board[inp - 1] == " ":
             board[inp - 1] = player1
         else:
@@ -87,10 +87,10 @@ def checkDraw(board):
 def checkWinner():
     global roundCounter, score
     if checkAcross(board) or checkDown(board) or checkDiag(board):
-        print(Fore.RED + f'THE WINNER IS {winner}')
+        print(Fore.RED + f'THE WINNER IS {winner}!')
         roundCounter += 1
-        score[player1] += 1
-        print(f"SCORE - X: {score['X']} | O: {score['O']}")
+        score[winner] += 1
+        print(Fore.RED + f"SCORE = X: {score['X']} | O: {score['O']}")
         restartGame()
     
 def restartGame():
@@ -101,7 +101,7 @@ def restartGame():
     player1 = "X"
     winner = None
     gameRunning = True
-    print("Restarting game .....\n")
+    print(Fore.RED + "Restarting game .....\n")
 
 
 def changePlayer():
@@ -110,6 +110,7 @@ def changePlayer():
         player1 = "O"
     else:
         player1 = "X"
+
 
 
 def computer(board):
@@ -122,7 +123,7 @@ def computer(board):
 
 def roundCount():
     global roundCounter
-    print(Fore.BLUE + f"ROUNDS PLAYED: {roundCounter}")
+    print(Fore.RED + f"ROUNDS PLAYED: {roundCounter}")
 
 
 # Create while loop to run the game
