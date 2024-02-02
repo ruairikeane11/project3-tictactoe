@@ -32,12 +32,15 @@ Tic-tac-toe is a digital game for two players. The game is played on a grid that
 
  ### Styling:
  - I wanted to make the visual style of this game as simple and as minimalistic as possible. When you run the game. The rules of the game are displayed along with the number of rounds played(starting at 0), and the players allocated symbol(X).
+
  ![Alt text](pictures/image.png)
 
  - Underneath the rules display, lies the 3x3 grid in which the game is played. Each square is clearly seperated from another.
+
  ![Alt text](pictures/image-1.png)
 
-- Below the grid, there lies text which prompts the user to pick a number between 1 and 9, with each number corresponding to a sqaure on the 3x3 grid. 
+- Below the grid, there lies text which prompts the user to pick a number between 1 and 9, with each number corresponding to a sqaure on the 3x3 grid.
+
 ![Alt text](pictures/image-2.png)
 
 ### Colours
@@ -142,7 +145,7 @@ Tic-tac-toe is a digital game for two players. The game is played on a grid that
 
 ### ChatGPT 3.5
 
-- I used ChatGPT to help me fix bugs. For example, it helped me fix an error to ensure that the score dictionary was updating the correct score.
+- I used ChatGPT to help me fix bugs and run me through code . For example, it helped me fix an error to ensure that the score dictionary was updating the correct score.
 
 ![Alt text](pictures/image-17.png)
 
