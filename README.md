@@ -118,9 +118,9 @@ Tic-tac-toe is a digital game for two players. The game is played on a grid that
 
 ### Validation 
 
-- The python code was regularly ran through https://www.pythonchecker.com/ to ensure it scored a high percentage
+- The python code was regularly ran through https://pep8ci.herokuapp.com/# to ensure it scored a high percentage
 
-![Alt text](pictures/image-8.png)
+![Alt text](image.png)
 
 ### General Testing
 

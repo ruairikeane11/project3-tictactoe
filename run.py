@@ -56,10 +56,10 @@ def checkDown(board):
     if board[0] == board[3] == board[6] and board[0] != " ":
         winner = board[0]
         return True
-    elif board[1] == board[4] == board[7] and board[1] != " ":
+    if board[1] == board[4] == board[7] and board[1] != " ":
         winner = board[1]
         return True
-    elif board[2] == board[5] == board[8] and board[2] != " ":
+    if board[2] == board[5] == board[8] and board[2] != " ":
         winner = board[2]
         return True
 
@@ -69,7 +69,7 @@ def checkDiag(board):
     if board[0] == board[4] == board[8] and board[0] != " ":
         winner = board[0]
         return True
-    elif board[6] == board[4] == board[2] and board[6] != " ":
+    if board[6] == board[4] == board[2] and board[6] != " ":
         winner = board[6]
         return True
 
@@ -92,12 +92,13 @@ def checkWinner():
         score[winner] += 1
         print(Fore.RED + f"SCORE = X: {score['X']} | O: {score['O']}")
         restartGame()
-    
+
+
 def restartGame():
     global board, player1, winner, gameRunning
-    board =  [" ", " ", " ",
-              " ", " ", " ",
-              " ", " ", " "]
+    board = [" ", " ", " ",
+             " ", " ", " ",
+             " ", " ", " "]
     player1 = "X"
     winner = None
     gameRunning = True
@@ -112,7 +113,6 @@ def changePlayer():
         player1 = "X"
 
 
-
 def computer(board):
     while player1 == 'O':
         position = random.randint(0, 8)
@@ -125,15 +125,26 @@ def roundCount():
     global roundCounter
     print(Fore.RED + f"ROUNDS PLAYED: {roundCounter}")
 
+gameMode = int(input("Choose the game mode : 1 (Against computer) or 2 (Two-player)"))
+print(gameMode)
+
 
 # Create while loop to run the game
 while gameRunning:
     roundCount()
     boardGame(board)
-    playerInput(board)
+    if gameMode == 1:
+        if player1 == "X":
+            playerInput(board)
+        else:
+            computer(board)
+    else:
+        playerInput(board)
+
     checkWinner()
     checkDraw(board)
     changePlayer()
-    computer(board)
-    checkWinner()
-    checkDraw(board)
+    if gameMode == 1:
+        checkWinner()
+        checkDraw(board)
+    
