@@ -10,7 +10,7 @@ gameRunning = True
 roundCounter = 0
 score = {"X": 0, "O": 0}
 
-init(autoreset=True)  # Autoresets colors
+init(autoreset = True)  # Autoresets colors
 
 
 def boardGame(board):
@@ -25,7 +25,7 @@ def boardGame(board):
 
 def playerInput(board):
     try:
-        inp = int(input(Fore.GREEN + "Enter a number between 1-9: "))
+        inp = int(input(Fore.GREEN + "Enter a number between 1 - 9: "))
         if inp >= 1 and inp <= 9 and board[inp - 1] == " ":
             board[inp - 1] = player1
         else:
@@ -33,7 +33,7 @@ def playerInput(board):
             print(Style.RESET_ALL)  # Resets color to default
             playerInput(board)
     except ValueError:
-        print(Fore.RED + 'Invalid input. Please enter a number between 1-9.')
+        print(Fore.RED + 'Invalid input. Please enter a number between 1 - 9.')
         print(Style.RESET_ALL)  # Resets color to default
         playerInput(board)
 
@@ -95,9 +95,9 @@ def checkWinner():
     
 def restartGame():
     global board, player1, winner, gameRunning
-    board = [" ", " ", " ",
-             " ", " ", " ",
-             " ", " ", " "]
+    board =  [" ", " ", " ",
+              " ", " ", " ",
+              " ", " ", " "]
     player1 = "X"
     winner = None
     gameRunning = True
@@ -137,6 +137,8 @@ while gameRunning:
     computer(board)
     checkWinner()
     checkDraw(board)
+
+  
 
     
     
