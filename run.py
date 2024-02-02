@@ -128,8 +128,8 @@ def roundCount():
 
 while True:
     try:
-        gameMode = int(input("Choose the game mode: 1 (Against computer)or 2 (Two-player): "))
-        if gameMode in [1,2]:
+        gameMode = int(input("Choose mode: 1 (computer) or 2 (2-player): "))
+        if gameMode in [1, 2]:
             break
         else:
             print("Invalid game mode, pick 1 or 2")
@@ -154,13 +154,7 @@ while gameRunning:
         playerInput(board)
         checkWinner()
         checkDraw(board)
-        changePlayer()    
-    else :
-        print("Invalid game mode, pick 1 or 2")
+        changePlayer()
+    else:
+        print(Fore.RED + "INVALID GAME MODE, PICK 1 OR 2")
         gameRunning()
-        
-
-    
-    
-
-    

@@ -1,9 +1,8 @@
-# Tic-Tac-Toe Python Game
+# Tic-Tac-Toe Python 
 
+![Alt text](image-5.png)
 
-![Alt text](pictures/image-6.png)
-
-Tic-tac-toe is a digital game for two players. The game is played on a grid that consists of three rows and three columns. Your symbol is X, and the computer's symbol is O. Each player takes turn allocating their symbol to an empty space on the grid. The first player to get a row or column consisting of their symbol wins. It is possible to win the game by having their symbol appear up, down or diagonally across the grid wins the round. Once a player has won, the game will automatically restart and move onto the next round. The overall score is constantly recorded, aswell as the total rounds played. This means a player can play for hours and keep track of the score.
+Tic-Tac-toe is a digital game for one or more players. The game is played on a grid that consists of three rows and three columns. The user has the option to either play against another person or against the computer. Each player takes turn allocating their symbol to an empty space on the grid. The first player to get a row or column consisting of their symbol wins. Once a player has won, the game will automatically restart and move onto the next round. The overall score is constantly recorded, aswell as the total rounds played. This means a player can play for hours and keep track of the score.
 
 ## Table Of Contents 
 
@@ -15,33 +14,14 @@ Tic-tac-toe is a digital game for two players. The game is played on a grid that
 6. Credits and Contact
 
 
-# UX (User Experience)
- ## The target audience for Tic-Tac-Toe are:
- - Younger children who are bored.
- - Older teens who may need a break from work/studying.
- - Older adults who are looking to kill time.
+
 
  ## User goals are :
- - Gives users a fun way to take a break from study/work while keeping their brain stimulated.
- - Gives users a fun game to play when they are travelling/ on long journeys
- - Allows users to strategise and play against the computer when alone.
 
  ## Tic-Tac-Toe reaches the user goals by:
- - Providing a mentally stimulating game.
- - Has no score limit, so a player can play for as long as they want.
 
- ### Styling:
- - I wanted to make the visual style of this game as simple and as minimalistic as possible. When you run the game. The rules of the game are displayed along with the number of rounds played(starting at 0), and the players allocated symbol(X).
 
- ![Alt text](pictures/image.png)
 
- - Underneath the rules display, lies the 3x3 grid in which the game is played. Each square is clearly seperated from another.
-
- ![Alt text](pictures/image-1.png)
-
-- Below the grid, there lies text which prompts the user to pick a number between 1 and 9, with each number corresponding to a sqaure on the 3x3 grid.
-
-![Alt text](pictures/image-2.png)
 
 ### Colours
 ![Alt text](pictures/image-3.png)
@@ -55,23 +35,20 @@ Tic-tac-toe is a digital game for two players. The game is played on a grid that
 
 - I used an input attribute to promp the user to choose a number between 1-9. The code used is shown below. 
 
-![Alt text](pictures/image-9.png)
+
 
 ## Try / Except Blocks
 
 - I used try/except blocks in my code to ensure the player chooses a valid number between 1-9 that is also empty on the board. If not, red text will appear and input element will appear again. If the player chooses a letter instead of an integer. Another error message will apear 
 
-![Alt text](pictures/image-10.png)
-![Alt text](pictures/image-19.png)
+
 
 
 ## Dictionaries 
 
 - I used a dictionary in my code to keep track of the score. After each round, the score will update.
 
-![Alt text](pictures/image-11.png)
 
-![Alt text](pictures/image-12.png)
 
 ## If/Else statements
 
@@ -108,19 +85,12 @@ Tic-tac-toe is a digital game for two players. The game is played on a grid that
 
 ## Other Tools 
 
-- I watched videos on Youtube to use as inspration for my game.
-
-- I used ChatGPT 3.5 to help me fix some errors and debug by code.
 
 # Testing 
 
 ## Methods
 
 ### Validation 
-
-- The python code was regularly ran through https://pep8ci.herokuapp.com/# to ensure it scored a high percentage
-
-![Alt text](image.png)
 
 ### General Testing
 
@@ -134,22 +104,6 @@ Tic-tac-toe is a digital game for two players. The game is played on a grid that
 
 # Credits
 
-### Youtube
-
-- I used a video (https://www.youtube.com/watch?v=dK6gJw4-NCo) as inspiration for my game design. 
-- Specifically, I used the code to make the 3x3 grid appear in the terminal when you run the game.
-![Alt text](pictures/image-15.png)
-
-- I customised my block of code so that is was more complex.
-![Alt text](pictures/image-16.png)
-
-### ChatGPT 3.5
-
-- I used ChatGPT to help me fix bugs and run me through code . For example, it helped me fix an error to ensure that the score dictionary was updating the correct score.
-
-![Alt text](pictures/image-17.png)
-
-![Alt text](pictures/image-18.png)
 
 
 
