@@ -137,8 +137,18 @@ while gameRunning:
     gameMode() = mode
     roundCount()
     boardGame(board)
+    if mode == 1:
+        while not checkWinner() and not checkDraw(board):
+        playerInput(board)
+        if not checkWinner() and not checkDraw(board):
+        changePlayer()
+        computer(board)
+    elif mode == 2:
+        while not checkWinner() and not checkDraw(board):
+            changePlayer()
+            playerInput(board)
+        
 
-    playerInput(board)
     checkWinner()
     checkDraw(board)
     changePlayer()
