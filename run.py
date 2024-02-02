@@ -125,26 +125,27 @@ def roundCount():
     global roundCounter
     print(Fore.RED + f"ROUNDS PLAYED: {roundCounter}")
 
-gameMode = int(input("Choose the game mode : 1 (Against computer) or 2 (Two-player)"))
-print(gameMode)
+
+def gameMode():
+    return int(input("Choose the game mode : 1 (Against computer) or 2 (Two-player): "))
+    
+    
 
 
 # Create while loop to run the game
 while gameRunning:
+    gameMode() = mode
     roundCount()
     boardGame(board)
-    if gameMode == 1:
-        if player1 == "X":
-            playerInput(board)
-        else:
-            computer(board)
-    else:
-        playerInput(board)
 
+    playerInput(board)
     checkWinner()
     checkDraw(board)
     changePlayer()
-    if gameMode == 1:
-        checkWinner()
-        checkDraw(board)
+    computer(board)
+    checkWinner()
+    checkDraw(board)
+    
+    
+
     
