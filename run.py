@@ -30,11 +30,9 @@ def playerInput(board):
             board[inp - 1] = player1
         else:
             print(Fore.RED + 'Sorry, this place has been taken!')
-            print(Style.RESET_ALL)  # Resets color to default
             playerInput(board)
     except ValueError:
         print(Fore.RED + 'Invalid input. Please enter a number between 1-9.')
-        print(Style.RESET_ALL)  # Resets color to default
         playerInput(board)
 
 
@@ -79,7 +77,6 @@ def checkDraw(board):
     if " " not in board:
         print(boardGame(board))
         print(Fore.RED + "IT'S A DRAW, START AGAIN!")
-        print(Style.RESET_ALL)
         restartGame()
         gameRunning = False
 
