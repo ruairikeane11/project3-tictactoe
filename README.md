@@ -6,18 +6,18 @@ Tic-Tac-toe is a digital game for one or more players. The game is played on a g
 
 ## Table Of Contents 
 
-1. UX
+
+1. User Experience
 2. Features
 3. Technologies Used
 4. Testing
-5. Deployment
-6. Credits and Contact
-
+5. Deployment 
+6. Credits
 
 # Uxer Experience
 
  ## User goals are as follows :
- - Play either a one player/two player game.
+ - Play either a one player or two player game.
  - Win the round by getting a row or column of X/O.
  - Consistently win as many rounds as possible.
  
@@ -87,14 +87,14 @@ Tic-Tac-toe is a digital game for one or more players. The game is played on a g
 
 ## Other Tools 
 
-- I used ChatGBT to help me install colorama in order to incorporate colour.
+- I used ChatGBT to help me install colorama in order to incorporate colour into my game.
 
 ![Alt text](image-12.png)
 
 # Testing 
 
-- I constantly tested my project in the terminal throughout the development. This meant I could easily see highlighted errors in my code.
-- I sent the repository to friends to that they could test the game. They also gave me some ideas to implement, for example, adding the option to play against someone other than the computer.
+- I constantly tested my project in the terminal throughout the development process. This meant I could easily see highlighted errors in my code.
+- I sent my working repository to friends to that they could test the game. They also gave me some ideas to implement, for example, adding the option to play against someone other than the computer.
 - This idea was only implemented in the final stage if my project, but I felt it added a lot to the user experience.
 - I simply added an if/elif block to the gameRunning function. After the if/elif statements I called functions in chronological order to ensure the game flowed how it was intended.
 
@@ -106,7 +106,7 @@ Tic-Tac-toe is a digital game for one or more players. The game is played on a g
 
 ### General Testing
 
-- Throughout the development of this project I constantly ran the game in the terminal to see how the game functioned.
+- Throughout the development of this project I constantly ran the game in the terminal to see how the game functioned and if there was any errors in the code.
 
 - This meant I could easily try out new methods and change existing code if necessary.
 
@@ -116,7 +116,7 @@ Tic-Tac-toe is a digital game for one or more players. The game is played on a g
 
 - This project was manually deployed with Heroku in the later stages of the development.
 - This meant I had to deploy the project each time I wanted to update it's functionality.
-- It was essential to add a Config Var in the setting in order for deployment.
+- It was essential to add a Config Var in the settings in order for deployment.
 - I added Python, and Node.js to the frameworks sections.
 
 ![Alt text](image-14.png)
@@ -127,6 +127,8 @@ Tic-Tac-toe is a digital game for one or more players. The game is played on a g
 - I found the Love Sandwiches walkthrough project very helpful in becoming more familar and comfortable wiritng python code and understanding the logic behind it.
 
 - I also became more familiar with deploying with Heroku thanks to the informative videos in the walkthrough project
+
+## 
 
 
 
